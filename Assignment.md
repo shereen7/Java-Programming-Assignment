@@ -17,6 +17,7 @@ Java programming assignment
                String inString = scan.nextLine(); // get input from user variable name = inString based on question if im not mistaken
 
                DefKodObj.DefKod(inString); //call method
+               DefKodObj.checkStringValidity(inString);
                DefKodObj.getStringLen(inString);//call method
 
         }
