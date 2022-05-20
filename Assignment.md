@@ -6,19 +6,31 @@ Java programming assignment
 
 
      import java.util.Scanner;
-        class Assignment{
-            public static void main(String[] args){
+     import java.util.regex.Pattern;
+     public class Assignment{
+       private static String inString;
+          private static int stringLen;
 
 
-               Scanner scan = new Scanner(System.in);
-               DefKod DefKodObj = new DefKod();  // DefKodObj object to get info from DefKod class
+       public static void main(String[] args){
+        boolean repeat = true;
+           DefKod DefKodObj = new DefKod();
 
-               System.out.println("Enter a string: ");
-               String inString = scan.nextLine(); // get input from user variable name = inString based on question if im not mistaken
-
-               DefKodObj.DefKod(inString); //call method
-               DefKodObj.checkStringValidity(inString);
-               DefKodObj.getStringLen(inString);//call method
-
+         //To loop until the user enters the correct input
+        while(repeat) {
+          Scanner sc = new Scanner(System.in);
+          System.out.println("Enter the input string : ");
+          //DefKod = new DefKod();
+          String inString = sc.nextLine();
+            if(DefKodObj.checkStringValidity(inString)) {
+                  DefKodObj.DefKod(inString);
+                  DefKodObj.getStringLen(inString);
+                 repeat = false;
+              }
+          else {
+           System.out.println("Invalid Input");
+           }
         }
+    
+    }
     }
